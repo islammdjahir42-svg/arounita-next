@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #FF6600;
+  --primary-dark: #E65C00;
+  --hot: #EF4444;
+  --topbar: #FFF0F0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hind Siliguri', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #FF6600; border-radius: 3px; }
+
+/* Flash sale horizontal scroll */
+.flash-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.flash-scroll::-webkit-scrollbar { display: none; }
+.flash-scroll > * { scroll-snap-align: start; flex-shrink: 0; }
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+/* Star rating */
+.star-rating {
+  color: #FBBF24;
+  font-size: 14px;
+}
+
+/* Line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Product card hover */
+.product-card { transition: box-shadow 0.2s ease, transform 0.2s ease; }
+.product-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.12); transform: translateY(-2px); }
+
+/* Btn orange */
+.btn-orange {
+  background: #FF6600;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-orange:hover { background: #E65C00; }
