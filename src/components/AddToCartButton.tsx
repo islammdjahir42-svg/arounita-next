@@ -84,8 +84,7 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
           onClick={() => addItem(product, qty)}
           className="flex items-center justify-center gap-2 w-full py-3.5 border-2 border-[#FF6600] text-[#FF6600] rounded-xl font-semibold text-base hover:bg-orange-50 transition-colors"
         >
-          এখনই কিনুন
-        </a>
+          এখনই কিনুন*        </a>
       )}
     </div>
   );
